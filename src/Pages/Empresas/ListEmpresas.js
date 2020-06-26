@@ -24,9 +24,11 @@ export default function Empresas(){
         }});
     };    
 
-    function buscar(){       
+    function buscar(){
+
+        const rota = (pesquisa.trim() === '') ? 'api/empresas' : `api/empresas/${pesquisa}`;
         
-        api.get('api/empresas', {
+        api.get(rota, {
                 headers: {
                     authorization: Token.GetToken(),
                 }
@@ -68,9 +70,7 @@ export default function Empresas(){
         
             <Pesquisa
                 onBlur={ ()=> {  
-                    if (pesquisa !== '') {
-                        buscar()
-                    }
+                    buscar()
                 }}
                 value={pesquisa} onChange={e => setPesquisa(e.target.value)}
             />

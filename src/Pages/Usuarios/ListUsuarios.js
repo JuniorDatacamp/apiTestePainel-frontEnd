@@ -24,7 +24,10 @@ export default function Usuarios(props){
     };
 
     function buscar(){
-        api.get('api/usuarios', {
+
+        const rota = (pesquisa.trim() === '') ? 'api/usuarios' : `api/usuarios/${pesquisa}`;
+
+        api.get(rota, {
             headers: {
                 authorization: Token.GetToken(),
             }
@@ -66,9 +69,7 @@ export default function Usuarios(props){
 
             <Pesquisa
                 onBlur={ ()=> {  
-                    if (pesquisa !== '') { 
-                        buscar()
-                    }
+                    buscar()
                 }}
                 value={pesquisa} onChange={e => setPesquisa(e.target.value)}
             />

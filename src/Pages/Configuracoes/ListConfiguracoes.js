@@ -2,7 +2,7 @@ import React, { Fragment, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import Tabela from '../../Components/Tabela/Tabela';
 import BtnAdd from '../../Components/Botao/addAbsolut';
-import Pesquisa from '../../Components/Pesquisa/Pesquisa';
+// import Pesquisa from '../../Components/Pesquisa/Pesquisa';
 
 import { useSnackbar } from 'notistack';
 
@@ -12,8 +12,6 @@ import Token from '../../Services/token';
 export default function Configuracoes(){
 
     const [configuracao, setConfiguracao] = useState([]);
-    const [pesquisa, setPesquisa] = useState('');
-
     const history = useHistory();
 
     const { enqueueSnackbar } = useSnackbar();
@@ -62,14 +60,16 @@ export default function Configuracoes(){
     return (
         <Fragment>
 
-            <Pesquisa
+            {/* <Pesquisa
                 onBlur={ ()=> {  
-                    if (pesquisa !== '') { 
+                    if (pesquisar) {
                         buscar()
                     }
                 }}
-                value={pesquisa} onChange={e => setPesquisa(e.target.value)}
-            />
+                value={pesquisar} onChange={e => setPesquisar(e.target.value)}
+            /> */}
+
+            { buscar() }
 
             <div align="right">
                 <BtnAdd form="/configuracoes/form" />

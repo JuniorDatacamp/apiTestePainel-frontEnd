@@ -196,7 +196,7 @@ export default function ViewEmpresas(){
         } 
     }    
 
-    useEffect(() => {        
+    useEffect(() => {
 
         if (editCadastro()){
             setEmpresas();
