@@ -6,7 +6,7 @@ import Pesquisa from '../../Components/Pesquisa/Pesquisa';
 
 import { useSnackbar } from 'notistack';
 import api from '../../Services/api';
-import Token from '../../Services/token';
+import Token from '../../Services/serviceStorage';
 
 export default function Usuarios(props){
 

@@ -11,7 +11,7 @@ import BtnExcluir from '../../Components/Botao/excluir';
 import Dialog from '../../Components/Dialog/Dialog';
 
 import api from '../../Services/api';
-import Token from '../../Services/token';
+import Token from '../../Services/serviceStorage';
 
 const useStyles = makeStyles((theme) => ({
   root: {

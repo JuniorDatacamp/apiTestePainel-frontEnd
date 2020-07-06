@@ -11,7 +11,7 @@ import { useSnackbar } from 'notistack';
 import './Empresas.css';
 import Schema from './SchemaEmpresas';
 import api from '../../Services/api';
-import Token from '../../Services/token';
+import Token from '../../Services/serviceStorage';
 
 const useStyles = makeStyles((theme) => ({
     root: {

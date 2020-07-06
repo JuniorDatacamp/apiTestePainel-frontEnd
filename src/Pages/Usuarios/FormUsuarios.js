@@ -9,7 +9,7 @@ import Dialog from '../../Components/Dialog/Dialog';
 import { useSnackbar } from 'notistack';
 import Schema from './SchemaUsuarios';
 import api from '../../Services/api';
-import Token from '../../Services/token';
+import Token from '../../Services/serviceStorage';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -193,6 +193,8 @@ export default function FormUsuarios(){
 
         if (editCadastro()){
             setUsuarios();
+        }else{
+            setCodEmpresa(Token.GetCodEmpresa());
         }
 
     }, []);
@@ -278,6 +280,7 @@ export default function FormUsuarios(){
                             variant="outlined"
                             size="small"
                             type="number"
+                            disabled
                             value={codEmpresa} onChange={e => setCodEmpresa(e.target.value)}
                         />   
                     </Grid>

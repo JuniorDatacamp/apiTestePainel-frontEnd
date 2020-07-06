@@ -7,7 +7,7 @@ import { white } from 'material-ui/styles/colors';
 
 import { useSnackbar } from 'notistack';
 import api from '../../Services/api';
-import Token from '../../Services/token';
+import serviceStorage from '../../Services/serviceStorage';
 
 function Copyright() {
   return (
@@ -79,7 +79,7 @@ export default function SignIn() {
 
                 if ( data ){
 
-                    Token.PostToken(data.token);
+                    serviceStorage.PostDataLogin(data);
                     history.push('/home');
                 }                    
             },

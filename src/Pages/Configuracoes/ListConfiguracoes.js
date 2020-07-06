@@ -7,7 +7,7 @@ import BtnAdd from '../../Components/Botao/addAbsolut';
 import { useSnackbar } from 'notistack';
 
 import api from '../../Services/api';
-import Token from '../../Services/token';
+import Token from '../../Services/serviceStorage';
 
 export default function Configuracoes(){
 
